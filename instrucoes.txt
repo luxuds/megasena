@@ -1,0 +1,31 @@
+Projeto Megasena
+
+Com base em todos os resultados da megasena sorteados até hoje e disponíveis no próximo link do Aprender. Faça:
+
+Uma classe em Python com a finalidade de manipular os resultados da megasena.
+A classe deverá oferecer as seguintes funcionalidades:
+a) carregar(filename): carrega o arquivo CSV, transformando em uma matriz. Declare a matriz como um atributo. FEITO
+
+b) getOcorrências(): Retorna uma lista de dicionário com a quantidade de vezes que cada número foi sorteado, cada item da lista deve conter o número e sua incidência e a lista deve estar ordenada do maior índice de sorteio ao menor índice;
+
+c) conferir (jogo[]): O usuário envia uma sugestão de um jogo da MegaSena (com no mínimo seis números e no máximo 9 números).
+O método retorna uma lista informando as vezes que a sugestão de jogo foi sorteada no passado, podendo ser na quadra, quina ou sena.
+
+d) sugerirJogo(): o método sugere na forma de string um jogo com 8 números. Os números sugeridos devem ser valores sorteados dentro do conjunto dos 30 números mais incidentes na história da megasena.
+
+
+Crie também um módulo web utilizando Flask como backend restful e um frontend simples (html+css+js) para prover interação com o usuário. A interface deve oferecer as seguintes funcionalidades:
+
+- upload do arquivo csv: envia um arquivo csv (upload) com os resultados da megasena para ser processado, consulte a documentação: https://pythonbasics.org/flask-upload-file/
+- mostrar as ocorrências dos números sorteados no passado: de acordo com o ítem b) acima
+- permitir que o usuário preencha um jogo com 6 até 9 números e conferir se já foi premiado no passado: Retorna as datas e  o tipo de premiação (quadra, quina ou sena) acondicionados em uma tabela. Use o item c) acima.
+- sugerir jogo: mostra o resultado processado no item d)
+
+Obs:
+Opcionalmente você pode utilzar o MongoDB para prover persistência dos resultados da megasena, dessa forma deverá repensar na estrutura do projeto.
+
+{$and :[{n1: {"$in" :[9,11,23,39,54,66]}},{n2: {"$in" :[9,11,23,39,54,66]}},{n3: {"$in" :[9,11,23,39,54,66]}},{n4: {"$in" :[9,11,23,39,54,66]}},{n5: {"$in" :[9,11,23,39,54,66]}},{n6: {"$in" :[9,11,23,39,54,66]}}]}
+
+{filter: {$and: [{n1: {$in: [39,9,11,54,7,57]}},{n2: {$in: [39,9,11,54,7,57]}},{n3: {$in: [39,9,11,54,7,57]}},{n4: {$in: [39,9,11,54,7,57]}},{n5: {$in: [39,9,11,54,7,57]}},
+      {n6: {$in: [39,9,11,54,7,57]}}]}
+}

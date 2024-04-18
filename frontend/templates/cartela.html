@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock css %}
+
+{% block content %}
+    <div class="mt-4">
+        <h1 class="text-center">Cartela da Mega-Sena</h1>
+
+        <div class="numbers-grid" id="numbersGrid"></div>
+
+        <h3>Números Escolhidos</h3>
+
+        <div id="selectedNumbers"></div>
+
+        <div class="d-flex flex-column mb-3">
+            <div class="p-2"></div>
+            <div class="p-2">
+                <button class="btn btn-primary" id="confirmButton" disabled>Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <p id="resultados"></p>
+{% endblock content %}
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+{% endblock js %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>Lista de ocorrências históricas</p>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th>Número</th>
+            <th>Vezes jogadas</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%for i in range(0, len)%}
+        <tr>
+            <td>{{ ocorrencias[i]['numero'] }}</td>
+            <td>{{ ocorrencias[i]['qtadeNro'] }}</td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

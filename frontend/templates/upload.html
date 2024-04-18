@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h3>Escolha um jogo que esteja em um arquivo no formato CSV</h3>
+        <div class="mt-4">
+            <form class="form-control"
+                  action="http://localhost:5000/uploader"
+                  method="POST"
+                  enctype="multipart/form-data">
+                <div class="row">
+                    <input name="file" type="file" accept=".csv">
+                </div>
+                <div class="mt-4">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3 class="mt-4 text-center">
+        {% for resultado in resultados %}
+            {% if resultado != 0 %}
+                <p>{{ resultado }}</p>
+            {% endif %}
+        {% endfor %}
+    </h3>
+
+{% endblock %}

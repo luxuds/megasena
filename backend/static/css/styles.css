@@ -1,0 +1,43 @@
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.numbers-grid {
+    padding-left: 500px;
+    padding-right: 500px;
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-gap: 3px;
+}
+
+.number {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #333;
+    border-radius: 30%;
+    background-color: #fff;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.number:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.number.selected {
+    background-color: darkgreen;
+    color: white;
+}
+
+.number.minimum-selected {
+    background-color: yellow;
+    color: black;
+}

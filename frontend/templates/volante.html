@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+<h1 class="text-center mt-4 mb-4">Cartela da Mega-Sena</h1>
+<div class="jumbotron">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
+        {% for numero in range(1,61) %}
+        <div class="col">
+            <div class="card" style="width: 50px; height: 50px;">
+                <div class="card-body text-center p-1">
+                    <h6 class="card-title m-0 mt-2">{{ numero }}</h6>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

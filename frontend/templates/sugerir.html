@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock css %}
+
+{% block content %}
+    <div class="mt-4">
+        <h2 class="text-center">Sugestões Aleatórios</h2>
+        <h5 class="text-center">Abaixo os 30 números mais sorteados na história da Mega Sena</h5>
+
+        <h3 class="mt-4 text-center">
+            {% for resultado in resultados %}
+                {{ resultado['numero'] }}
+            {% endfor %}
+        </h3>
+
+        <h5 class="text-center mt-5">Destes serão escolhidos 8 números de forma aleatória</h5>
+
+        <div class="d-flex flex-column mb-3">
+            <a class="btn btn-primary" href="http://localhost:5000/sugerir-jogo">Sortear?</a>
+        </div>
+        {% if resultadofinal %}
+            {% for resultado in resultadofinal %}
+                <p>
+                {{ resultado['premiacao'] }}
+                {{ resultado['data'] }}
+                </p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <p id="resultados"></p>
+{% endblock content %}
