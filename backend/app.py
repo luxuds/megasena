@@ -88,7 +88,7 @@ def sugerirJogo():
     megasena.numerosMaisSorteados()
     oitoNumerosEscolhidosAleatorios = megasena.sugerirJogo()
     resultadofinal = megasena.conferir(oitoNumerosEscolhidosAleatorios)
-    return render_template(template_name, resultadofinal=resultadofinal, resultados=resultados)
+    return render_template(template_name, resultadofinal=resultadofinal, resultados=resultados, numeros=oitoNumerosEscolhidosAleatorios)
 
 
 if __name__ == '__main__':
